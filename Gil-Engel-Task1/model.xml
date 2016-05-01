@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	<featureModel chosenLayoutAlgorithm="1">
+	<featureModel>
+		<properties/>
 		<struct>
 			<and abstract="true" mandatory="true" name="File_Explorer">
 				<description>
 					A simple file explorer that shows directories and files of an operation system
-					
 				</description>
 				<and abstract="true" mandatory="true" name="Folder">
+					<description>
+						
+					</description>
 					<and abstract="true" mandatory="true" name="File">
 						<description>
-							 
+							
 						</description>
 						<feature name="Open_File">
 							<description>
@@ -25,7 +28,6 @@
 						<feature mandatory="true" name="Delete_File">
 							<description>
 								Deletes an existing file from saved location
-								
 							</description>
 						</feature>
 						<feature name="Rename_File">
@@ -36,12 +38,10 @@
 						<and abstract="true" name="Search">
 							<description>
 								Provides a search algorithm to search for files or for text in files
-								
 							</description>
 							<feature name="FindIn_Files">
 								<description>
 									Finds text files where a by user input given text occurs
-									
 								</description>
 							</feature>
 							<feature name="Find_File">
@@ -59,7 +59,6 @@
 							<description>
 								Shows a preview of the file directly in the explorer. Only works for 
 								images and text files
-								
 							</description>
 						</feature>
 						<feature name="Hidden_Files_Visibillity">
@@ -80,7 +79,6 @@
 								<description>
 									Creates a copy of selected files into another directory and delete them afterwards
 									in the old location
-									
 								</description>
 							</feature>
 						</or>
@@ -98,7 +96,6 @@
 					<feature name="Rename_Folder">
 						<description>
 							Provides the abillity to rename an existing directory
-							
 						</description>
 					</feature>
 					<feature name="Change_Folder_Permission">
@@ -179,7 +176,7 @@
 					</description>
 					<feature name="Tabs">
 						<description>
-							Tabs provides multiple views of different folders. 
+							Tabs provides multiple views of different folders.
 						</description>
 					</feature>
 					<feature name="Favorites">
@@ -210,7 +207,6 @@
 						<feature mandatory="true" name="Columns">
 							<description>
 								Show files with a big icon and the name in multiply columns
-								
 							</description>
 						</feature>
 					</or>
@@ -233,7 +229,6 @@
 				<and mandatory="true" name="User">
 					<description>
 						Represants the current loggedin user
-						
 					</description>
 					<feature mandatory="true" name="Rights">
 						<description>
@@ -243,26 +238,7 @@
 				</and>
 			</and>
 		</struct>
-		<constraints>
-			<rule>
-				<imp>
-					<var>Rights</var>
-					<var>File</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>Rights</var>
-					<var>Folder</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>Rights</var>
-					<var>Devices</var>
-				</imp>
-			</rule>
-		</constraints>
+		<constraints/>
 		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
 		<comments/>
 		<featureOrder userDefined="false"/>
