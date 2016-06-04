@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel>
+		<properties/>
+		<struct>
+			<and abstract="true" mandatory="true" name="File_Explorer">
+				<description>
+					A simple file explorer that shows directories and files of an operation system
+				</description>
+				<and mandatory="true" name="Folder">
+					<description>
+						
+					</description>
+					<and mandatory="true" name="File">
+						<description>
+							
+						</description>
+						<feature abstract="true" name="Open_File">
+							<description>
+								Opens a selected or multiply selected files with the associated program.
+								E.g. a .txt will be opened by the default text editor of the os.
+							</description>
+						</feature>
+						<feature name="Create_File">
+							<description>
+								Creates a blank file with no extension (Linux) or *.txt on Windows.
+							</description>
+						</feature>
+						<feature name="Delete_File">
+							<description>
+								Deletes an existing file from saved location
+							</description>
+						</feature>
+						<feature name="Rename_File">
+							<description>
+								Provides the abillity to rename an existing file
+							</description>
+						</feature>
+						<and abstract="true" name="Search">
+							<description>
+								Provides a search algorithm to search for files or for text in files
+							</description>
+							<feature abstract="true" name="FindIn_Files">
+								<description>
+									Finds text files where a by user input given text occurs
+								</description>
+							</feature>
+							<feature abstract="true" name="Find_File">
+								<description>
+									Finds all files defined by the user given search spattern (RegEx)
+								</description>
+							</feature>
+						</and>
+						<feature abstract="true" name="Change_File_Permission">
+							<description>
+								Provides the abillity to change file permission e.g. set read/write/executable flags for a file
+							</description>
+						</feature>
+						<feature abstract="true" name="FIle_Preview">
+							<description>
+								Shows a preview of the file directly in the explorer. Only works for 
+								images and text files
+							</description>
+						</feature>
+						<feature abstract="true" name="Hidden_Files_Visibillity">
+							<description>
+								Change the visibillity of hidden files
+							</description>
+						</feature>
+						<or abstract="true" name="Move_File">
+							<description>
+								Allows to move files from on directory to another
+							</description>
+							<feature abstract="true" mandatory="true" name="Copy_File">
+								<description>
+									Creates a copy of selected files into another directory
+								</description>
+							</feature>
+							<feature abstract="true" mandatory="true" name="Cut_File">
+								<description>
+									Creates a copy of selected files into another directory and delete them afterwards
+									in the old location
+								</description>
+							</feature>
+						</or>
+					</and>
+					<feature name="Create_Folder">
+						<description>
+							Creates an empty folder
+						</description>
+					</feature>
+					<feature name="Delete_Folder">
+						<description>
+							Deletes a folder even if it contains subfolders or files
+						</description>
+					</feature>
+					<feature name="Rename_Folder">
+						<description>
+							Provides the abillity to rename an existing directory
+						</description>
+					</feature>
+					<feature abstract="true" name="Change_Folder_Permission">
+						<description>
+							Provides the abillity to change file permission e.g. set read/write/executable flags for a directory
+						</description>
+					</feature>
+					<feature abstract="true" name="Hiden_Folder_Visibillity">
+						<description>
+							Change the visibillity of hidden files
+						</description>
+					</feature>
+					<and abstract="true" name="Move_Folder">
+						<description>
+							Allows to move folder from on directory to another
+						</description>
+						<feature abstract="true" name="Copy_Folder">
+							<description>
+								Creates a copy of selected folders into another folder
+							</description>
+						</feature>
+						<feature abstract="true" name="Cut_Folder">
+							<description>
+								Creates a copy of selected folders into another folder and deletes them
+								afterwards in the old location
+							</description>
+						</feature>
+					</and>
+				</and>
+				<and abstract="true" name="Devices">
+					<description>
+						Files and Folders are saved on physical devices. This feature represents those.
+					</description>
+					<feature mandatory="true" name="Partitions_Harddrive">
+						<description>
+							Shows all available harddrives/partitions
+						</description>
+					</feature>
+					<feature abstract="true" name="USB">
+						<description>
+							Shows all available usb devices
+						</description>
+					</feature>
+					<feature abstract="true" name="Disc">
+						<description>
+							Shows all available disc devices
+						</description>
+					</feature>
+					<feature abstract="true" name="Network">
+						<description>
+							Shows all available harddrives/partitions from network
+						</description>
+					</feature>
+					<feature abstract="true" name="Dropbox">
+						<description>
+							Shows folders from a remote dropbox cloud
+						</description>
+					</feature>
+				</and>
+				<and abstract="true" name="Sorting">
+					<description>
+						Provides an algorithm to sort directories and / or files when displayed
+					</description>
+					<feature abstract="true" name="Ascending">
+						<description>
+							Show folders/files in an ascending sorting
+						</description>
+					</feature>
+					<feature abstract="true" name="Descending">
+						<description>
+							Show folders/files in an descending sorting
+						</description>
+					</feature>
+				</and>
+				<and mandatory="true" name="UI">
+					<description>
+						The UI is used for the user to interact and to manage his folders and files easilly.
+					</description>
+					<feature name="Tabs">
+						<description>
+							Tabs provides multiple views of different folders.
+						</description>
+					</feature>
+					<feature name="Favorites">
+						<description>
+							Shows a list with commun folders in order to make navigation much easier
+						</description>
+					</feature>
+					<or name="View">
+						<description>
+							Folders and files can be viewed in several different ways. This feature
+							gives the abillity to switch and use them
+						</description>
+						<feature abstract="true" mandatory="true" name="Tree">
+							<description>
+								Shows folders and files in a tree structure with small icons
+							</description>
+						</feature>
+						<feature mandatory="true" name="Detail">
+							<description>
+								Show folders and files in a list with detailled descriptions
+							</description>
+						</feature>
+						<feature abstract="true" mandatory="true" name="Icon">
+							<description>
+								Show folders and files with a big icon and just the name
+							</description>
+						</feature>
+						<feature abstract="true" mandatory="true" name="Columns">
+							<description>
+								Show files with a big icon and the name in multiply columns
+							</description>
+						</feature>
+					</or>
+					<or abstract="true" name="Theme">
+						<description>
+							Make the explorer more personal with user selectable themes
+						</description>
+						<feature abstract="true" mandatory="true" name="Light">
+							<description>
+								Provides a light (white, gray) theme
+							</description>
+						</feature>
+						<feature abstract="true" mandatory="true" name="Dark">
+							<description>
+								Provides a dark theme (dark gray, black)
+							</description>
+						</feature>
+					</or>
+				</and>
+				<and abstract="true" mandatory="true" name="User">
+					<description>
+						Represants the current loggedin user
+					</description>
+					<feature abstract="true" mandatory="true" name="Rights">
+						<description>
+							Represants the rights that the current user has
+						</description>
+					</feature>
+				</and>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
